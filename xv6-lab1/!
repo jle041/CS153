@@ -1,4 +1,4 @@
-struct stat;
+
 struct rtcdate;
 
 // system calls

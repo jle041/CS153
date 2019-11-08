@@ -21,9 +21,31 @@ sys_exit(void)
 }
 
 int
+sys_exits(void)
+{
+  int status;
+  if(argint(0, &status < 0)
+    return -1;
+
+  exits(status);
+  return 0;
+}
+
+int
 sys_wait(void)
 {
   return wait();
+}
+
+int
+sys_waits(void)
+{
+  int *status;
+  if(argptr(0, (void*)&status, sizeof(void*))) {
+    return -1;
+  }
+
+  return waits(status);
 }
 
 int
